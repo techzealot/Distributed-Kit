@@ -60,7 +60,9 @@ class RedisLockInternals {
             jedis = jedisPool.getResource();
             String luaScript = ""
                     + "\nlocal r = tonumber(redis.call('SETNX', KEYS[1],ARGV[1]));"
+                    +"\nif r==1 then"
                     + "\nredis.call('PEXPIRE',KEYS[1],ARGV[2]);"
+                    +"\nend"
                     + "\nreturn r";
             List<String> keys = new ArrayList<String>();
             keys.add(lockId);
