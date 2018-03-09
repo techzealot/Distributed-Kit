@@ -1,7 +1,8 @@
 # Distributed-Kit(fork)
 基于redis和zookeeper分布式工具集-包括:分布式锁实现,分布式速率限制器,分布式ID生成器等.   
 
-## Repair:修复Redis分布式锁每次获取锁时不论是否成功都会刷新过期时间的bug
+
+<font color=#DC143C size=4>Repair:修复Redis分布式锁每次获取锁时不论是否成功都会刷新过期时间的bug </font>    
 
 ## 使用
 ### maven: 需先编译安装到本地仓库或者本地私服 。
